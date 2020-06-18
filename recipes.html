@@ -12,21 +12,10 @@
                <a href="/recipes.html">Receitas</a>
            </div>
         </header>
-        <div class="box-description">
-            <div class="box-description-title">
-                <h2>As Melhores Receitas</h2>
-                <p>Aprenda a construir os melhores pratos com receitas criadas por profissionais do mundo inteiro</p>
-                
-            </div>
-            
-            <div class="box-description-img">
-                <img src="/assets/chef.png" alt="chef">
-            </div>      
-        </div>
+
         <section class="box-acess">
-            <h3>As mais acessadas</h3>
             <div class="box-cards">
-                <div class="box-card">
+                <div class="box-card" id="burger">
                     <div class="box-card-img">
                         <img src="/assets/burger.png" alt="burger">
                     </div>
@@ -37,9 +26,9 @@
                         <p>Por Jorge Relato</p>
                     </div>
                  </div>
-                 <div class="box-card">
-                     <div class="box-card-img">
-                         <img src="/assets/pizza.png" alt="burger">
+                 <div class="box-card" id="pizza">
+                     <div class="box-card-img" >
+                         <img src="/assets/pizza.png" alt="pizza">
                      </div>
                      <div class="box-name">
                          <p>Pizza 4 Estações</p>
@@ -48,9 +37,9 @@
                          <p>Por Fabiana Melo</p>
                      </div>
                   </div>
-                  <div class="box-card">
-                     <div class="box-card-img">
-                         <img src="/assets/espaguete.png" alt="burger">
+                  <div class="box-card" id="espaguete">
+                     <div class="box-card-img" >
+                         <img src="/assets/espaguete.png" alt="espaguete">
                      </div>
                      <div class="box-name">
                          <p>Espaguete ao Alho</p>
@@ -59,9 +48,9 @@
                          <p>Por Júlia Kinoto</p>
                      </div>
                   </div>
-                  <div class="box-card">
-                     <div class="box-card-img">
-                         <img src="/assets/lasanha.png" alt="burger">
+                  <div class="box-card" id="lasanha">
+                     <div class="box-card-img" >
+                         <img src="/assets/lasanha.png" alt="lasanha">
                      </div>
                      <div class="box-name">
                          <p>Lasanha mac n' Chesse</p>
@@ -70,9 +59,9 @@
                          <p>Por Juliana Viera</p>
                      </div>
                   </div>
-                  <div class="box-card">
-                     <div class="box-card-img">
-                         <img src="/assets/doce.png" alt="burger">
+                  <div class="box-card" id="doce">
+                     <div class="box-card-img" >
+                         <img src="/assets/doce.png" alt="doce">
                      </div>
                      <div class="box-name">
                          <p>Docinhos Pão de Mel</p>
@@ -81,9 +70,9 @@
                          <p>Por Ricardo Golvea</p>
                      </div>
                   </div>
-                  <div class="box-card">
+                  <div class="box-card" id="asinhas">
                      <div class="box-card-img">
-                         <img src="/assets/asinhas.png" alt="burger">
+                         <img src="/assets/asinhas.png" alt="asinhas">
                      </div>
                      <div class="box-name">
                          <p>Assinha de Frango ao Barbecue</p>
@@ -95,6 +84,29 @@
             </div>
 
         </section>
-       
+        <div class="modal-overlay">
+            <div class="modal">
+                <a class="close-modal">
+                    <i class="material-icons">Fechar</i>
+                </a>
+                <div class="modal-content">
+                    
+                        <div class="box-card">
+                            <div class="box-card-img">
+                                <img src="" alt="" id="img-demo">
+                            </div>
+                            <div class="box-name">
+                                <p id="p-description"></p>
+                            </div>
+                            <div class="box-info">
+                                <p id="p-chef"></p>
+                            </div>
+                         </div>
+                    
+            </div>
+        </div>
+        <script src="/scripts/script.js"></script>
     </body>
 </html>
+
+

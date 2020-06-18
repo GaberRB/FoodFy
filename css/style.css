@@ -71,6 +71,24 @@ body{
    margin-top: 66px;
 }
 
+/* ==about== */
+
+.about-desc{
+    padding: 24px;
+    width: 940px;
+    height: 280px;
+    margin: 16px auto;
+}
+
+.about-desc h2{
+    margin-bottom: 16px;
+    margin-top: 16px;
+}
+
+.about-desc p{
+    padding: 10px;
+    line-height: 24px;
+}
 
 /* ==box cards ==*/
 .box-acess h3{

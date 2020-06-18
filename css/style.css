@@ -1,0 +1,100 @@
+@import 'https://fonts.googleapis.com/css2?family=Roboto&display=swap';
+
+*{
+    margin: 0;
+    padding: 0;
+    border: 0;
+}
+
+body{
+    font-family: 'Roboto', sans-serif;
+    background: white;
+    color: black;
+}
+
+.header-box{
+    padding: 30px;
+   
+}
+.links{
+    display: flex;
+}
+.links h1{
+    font-weight: normal;
+    width: 90px;
+    height: 27px;
+    margin-top: 36px;
+    margin-left: 26px;
+    margin-right: 123px;
+}
+
+.links a{
+    align-items: center;
+    width: 42px;
+    height: 19px;
+    color: black;
+    font-size: 18px;
+    line-height: 30px;
+    margin: 45px 16px;
+    text-decoration: none;
+}
+
+.box-description{
+    display: flex;
+    justify-content: space-between;
+    background-color: #f8dfbb;
+    width: 940px;
+    height: 366px;
+    padding: 40px;
+    margin: 50px auto;
+    border-radius: 30px;
+        
+}
+
+.box-description-title{
+    margin-top: 117px;
+    margin-bottom: 10px;
+
+   
+    
+}
+.box-description-title p{
+    font-weight: normal;
+    width: 316px;
+    height: 84px;
+    
+}
+.box-description-img{
+   width: 216px;
+   height: 300px;
+   margin-right: 100px;
+   margin-top: 66px;
+}
+
+
+/* ==box cards ==*/
+.box-acess h3{
+    padding: 0 37px;
+    font-size: 24px;
+    font-weight: bold;
+}
+.box-cards{
+    max-width: 500px;
+    padding: 37px;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 20px;
+}
+
+.box-card-img img{
+    border-radius: 15px;
+    padding: 1px;
+    text-align: center;
+    margin-bottom: 5px;
+}
+
+.box-name p{
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+    

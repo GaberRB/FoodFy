@@ -1,6 +1,6 @@
 <b># FoodFy</b>
 
-Layout do Foodfy , desafio Front-end do bootcamp <a href="https://rocketseat.com.br/" target="_blank">Launchbase Rockseat.</a> <img src="https://img.icons8.com/emoji/24/000000/rocket-emji.png"/>
+Layout do Foodfy , desafio Front-end do bootcamp <a href="https://rocketseat.com.br/" target="_blank">Launchbase Rocktseat.</a> <img src="https://img.icons8.com/emoji/24/000000/rocket-emji.png"/>
 
 Tecnologias utilizadas :
 

@@ -1,12 +1,15 @@
 //express requisição
 const express = require('express')
 const nunjucks = require('nunjucks')
-const recipes = require("./data")
+const routes = require('./routes')
+
 
 const server = express()
 
 //usar arquivos estaticos
+server.use(express.urlencoded({extended:true}))
 server.use(express.static('public'))
+server.use(routes)
 
 //config template engine
 server.set('view engine', 'njk')
@@ -15,26 +18,6 @@ nunjucks.configure('views', {
     express: server,
     noCache: true
 })
-
-//rotas
-server.get("/", function(req, res){
-    return res.render("index")
-})
-
-server.get("/about", function(req, res){
-    return res.render("about")
-})
-
-server.get("/recipes", function(req, res){
-    return res.render("recipes", {items: recipes})
-})
-
-server.get("/recipe/:index", function (req, res) {
-    const recipe = recipes ;
-    const recipeIndex = req.params.index;
-    return res.render("recipe", {items: recipe[recipeIndex]})
-
-  })
 
 //iniciar o servidor
 server.listen(5000, function(){

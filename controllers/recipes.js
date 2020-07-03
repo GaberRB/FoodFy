@@ -1,11 +1,11 @@
 exports.index = function(req, res){
-    return res.send('/admin/index')    
+    return res.render('admin/recipes/index')    
 }
 exports.create = function(req, res){
   return res.send('/amdin/recipes/create')
 }
 exports.show = function(req, res){
-  return res.send('//admin/recipes/:id')    
+  return res.send('/admin/recipes/:id')    
 }
 exports.edit = function(req, res){
 return res.send('/admin/recipes/:id/edit')

@@ -11,6 +11,9 @@ routes.get("/recipe/:index", foodfy.recipe)
 
 
   //rotas do admin
+routes.get('/admin', function(req, res){
+    return res.redirect('/admin/recipes')
+})
 routes.get("/admin/recipes", recipes.index); // Mostrar a lista de receitas
 routes.get("/admin/recipes/create", recipes.create); // Mostrar formulário de nova receita
 routes.get("/admin/recipes/:id", recipes.show); // Exibir detalhes de uma receita

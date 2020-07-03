@@ -17,6 +17,17 @@ body{
     margin: 24px;
    
 }
+
+.header-admin{
+    background-color: #111;
+    width: 100%;
+    padding: 32px;
+    box-sizing: border-box;
+}
+.header-admin h1 a{
+    text-decoration: none;
+    color: white;
+}
 .links{
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;

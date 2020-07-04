@@ -4,7 +4,7 @@ exports.index = function(req, res){
   return res.render('admin/recipes/index', {items: recipe})    
 }
 exports.create = function(req, res){
-  return res.send('/amdin/recipes/create')
+  return res.render('admin/recipes/create')
 }
 exports.show = function(req, res){
   const recipe = recipes ;

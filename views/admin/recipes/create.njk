@@ -1,0 +1,75 @@
+{% extends "layout_admin.njk" %}
+
+{% block content_admin %}
+   <div class="admin-info">
+       <h2>Criando receita</h2>
+        <div><a href="#">Salvar receita</a></div>
+   </div>
+
+<section>
+    <form class="recipe-create" method="POST" action="/admin/recipes">
+        <div class="item">
+            <div>Imagem da receita</div>
+                <div>
+                    <input 
+                        type="url" 
+                        name="image"
+                        placeholder="http:\\"
+                       
+                    >
+            </div>
+        </div>
+        <div class="item">
+            <div>Nome</div>
+                <div>
+                    <input 
+                        type="text" 
+                        name="title"
+                                    
+                    >
+            </div>
+        </div>
+        <div class="item">
+            <div>Chef</div>
+                <div>
+                    <input 
+                        type="text" 
+                        name="author"
+                     
+                    >
+            </div>
+        </div>
+        <div class="item">
+            <div>Ingredientes</div>
+                <div>
+                    <input 
+                        type="text" 
+                        name="ingredients"
+                     
+                    >
+            </div>
+        </div>
+        <div class="item">
+            <div>Modo de preparo</div>
+                <div>
+                    <input 
+                        type="text" 
+                        name="preparation"
+                     
+                    >
+            </div>
+        </div>
+        <div class="item">
+            <div>Informações adicionais</div>
+                <div>
+                    <input 
+                        type="text" 
+                        name="information"
+                     
+                    >
+            </div>
+        </div>
+    </form>
+</section>   
+
+{% endblock %}

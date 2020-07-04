@@ -17,45 +17,6 @@ body{
     margin: 24px;
    
 }
-
-.header-admin{
-    background-color: #111;
-    width: 100%;
-    padding: 32px;
-    box-sizing: border-box;
-    margin-bottom: 36x;
-}
-.admin-info a, 
-.admin-info h2{
-    color: black;
-    font-size: 16px;
-    padding: 8px;
-}
-.admin-info a{
-    text-decoration: none;
-    background-color: black;
-    color: white;
-    border-radius: 4px;
-    padding: 8px 16px;
-
-}
-.header-admin h1 a{
-    text-decoration: none;
-    color: white;
-}
-.admin-info{
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    align-items: center;
-    margin: 26px auto;
-    text-align: center;
-
-}
-
-h3{
-    margin-top: 30px;
-    margin-left: 36px;
-}
 .links{
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
@@ -245,3 +206,63 @@ margin: 0 auto;
     color: gray;
 }
 
+/* ===Admin=== */
+.header-admin{
+    background-color: #111;
+    width: 100%;
+    padding: 32px;
+    box-sizing: border-box;
+    margin-bottom: 36x;
+}
+.admin-info a, 
+.admin-info h2{
+    color: black;
+    font-size: 16px;
+    padding: 8px;
+}
+.admin-info a{
+    text-decoration: none;
+    background-color: black;
+    color: white;
+    border-radius: 4px;
+    padding: 8px 16px;
+
+}
+.header-admin h1 a{
+    text-decoration: none;
+    color: white;
+}
+.admin-info{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    align-items: center;
+    margin: 26px auto;
+    text-align: center;
+
+}
+
+h3{
+    margin-top: 30px;
+    margin-left: 36px;
+}
+
+/* ===form=== */
+
+section{
+    background-color: whitesmoke;
+    width: 800px;
+    min-height: 400px;
+    margin: 45px auto;
+    padding: 16px 36px;
+    box-shadow: inset 0 0 1em gray, 0 0 1em white; 
+}
+
+input{
+    width: 100%;
+    outline: none;
+    font-weight: bold;
+    font-size: 22px;
+    margin: 16px 4px;
+    border-radius: 4px;
+    color: #555;
+}

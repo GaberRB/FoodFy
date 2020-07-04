@@ -1,14 +1,8 @@
-<!DOCTYPE html>
-<html>
+{% extends "layout_admin.njk" %}
 
-   <title>Foodfy - admin</title>
-   <link rel="stylesheet" href="/css/style.css">
-    <body>
-        <header class="header-admin">
-               <h1><a href="/">Foodfy</a> </h1>
-        </header>
-         <h3>Gerenciador de Receitas</h3>
-        <section class="box-cards">
+{% block content_admin %}
+  <h3>Gerenciador de Receitas</h3>
+       <section class="box-cards">
 
         {% for item in items %}
 
@@ -27,6 +21,4 @@
 
     </section>
      <script src="/scripts/script.js"></script>
- 
-    </body>
-</html>
+{% endblock%}

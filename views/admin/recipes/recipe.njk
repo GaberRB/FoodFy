@@ -1,18 +1,9 @@
-{% extends "layout.njk" %}
+{% extends "layout_admin.njk" %}
 
-{% block head %}
-
-    <head>
-        <title>Foodfy - Recipe</title>
-        <link rel="stylesheet" href="/css/style.css">
-    </head>
-{% endblock %}
-
-
-{% block content %}
+{% block content_admin %}
    <div class="admin-info">
-       <p>{{items.title}}</p>
-        <a href="#">Editar receita</a>
+       <h2>{{items.title}}</h2>
+        <div><a href="#">Editar receita</a></div>
    </div>
     
     

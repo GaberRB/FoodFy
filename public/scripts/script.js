@@ -1,11 +1,21 @@
 
 //Search recipes on click/ redirect for repice page
+
+const currentPage = location.pathname
+console.log(currentPage)
+console.log(currentPage.includes('admin'))
 const cards = document.querySelectorAll('.box-card');
 for (let i = 0; i < cards.length; i++) {
 
     (function (index) {
         cards[i].addEventListener("click", function () {
-            window.location.href = `/recipe/${index}`
+            if(!currentPage.includes('admin')){
+                window.location.href = `/recipe/${index}`
+            }else if (currentPage.includes('admin')){
+                console.log('oi')
+                window.location.href = `/admin/recipes/${index}`
+            }
+                
         });
     })(i);
 }
@@ -13,7 +23,7 @@ for (let i = 0; i < cards.length; i++) {
 
 /*===Show/hidden page recipe ===*/
 
-const divInfo = document.querySelector('.repice-info')
+    const divInfo = document.querySelector('.repice-info')
 const descriptions = divInfo.querySelectorAll('.info-hidden');
 
 function hiddenShow(id) {
@@ -34,5 +44,7 @@ for (let description of descriptions) {
         let pId = description.getAttribute('id')
         hiddenShow(pId)
     })
-}
+  }
+
+
 

@@ -23,10 +23,31 @@ body{
     width: 100%;
     padding: 32px;
     box-sizing: border-box;
+    margin-bottom: 36x;
+}
+.admin-info a, 
+.admin-info p{
+    text-decoration: none;
+    color: black;
+    font-size: 16px;
+    padding: 8px;
 }
 .header-admin h1 a{
     text-decoration: none;
     color: white;
+}
+.admin-info{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    align-items: center;
+    margin: 26px auto;
+    text-align: center;
+
+}
+
+h3{
+    margin-top: 30px;
+    margin-left: 36px;
 }
 .links{
     display: grid;

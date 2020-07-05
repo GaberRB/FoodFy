@@ -1,13 +1,15 @@
 {% extends "layout_admin.njk" %}
 
 {% block content_admin %}
-   <div class="admin-info">
-       <h2>Criando receita</h2>
-        <div><a href="#">Salvar receita</a></div>
-   </div>
-
+   
 <section>
     <form class="recipe-create" method="POST" action="/admin/recipes">
+        <div class="admin-info">
+            <h2>Criando receita</h2>
+            <div><button type="submit">Salvar receita</button></div>
+                
+        </div>
+        
         <div class="item">
             <div>Imagem da receita</div>
                 <div>
@@ -41,14 +43,17 @@
         </div>
         <div class="item">
             <div>Ingredientes</div>
-                <div>
+                <div class="ingredients">
                     <input 
                         type="text" 
                         name="ingredients"
                      
                     >
+                  
             </div>
-        </div>
+            <span onclick="myFunction()">Adicionar ingredientes</span>
+       </div>
+       
         <div class="item">
             <div>Modo de preparo</div>
                 <div>
@@ -72,4 +77,12 @@
     </form>
 </section>   
 
+<script>
+function myFunction() {
+  var x = document.createElement("INPUT");
+  x.setAttribute("type", "text");
+  x.setAttribute("name", "ingredients");
+  document.querySelector('.ingredients').appendChild(x);
+}
+</script>
 {% endblock %}

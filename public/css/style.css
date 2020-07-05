@@ -220,12 +220,14 @@ margin: 0 auto;
     font-size: 16px;
     padding: 8px;
 }
-.admin-info a{
+.admin-info button[type="submit"]{
     text-decoration: none;
+    font-size: 16px;
     background-color: black;
     color: white;
     border-radius: 4px;
     padding: 8px 16px;
+    cursor: pointer;
 
 }
 .header-admin h1 a{
@@ -265,4 +267,16 @@ input{
     margin: 16px 4px;
     border-radius: 4px;
     color: #555;
+}
+
+span{
+    font-size: 12px;
+    padding: 4px 8px;
+    display: inline-block;
+    margin-bottom: 10px;
+    box-sizing: border-box;
+    background-color: gray;
+    color: white;
+    border-radius: 6px;
+    cursor: pointer;
 }

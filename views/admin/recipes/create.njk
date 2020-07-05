@@ -41,29 +41,30 @@
                     >
             </div>
         </div>
-        <div class="item">
+        <div class="item" id="ingredients">
             <div>Ingredientes</div>
-                <div class="ingredients">
+                <div class="ingredient">
                     <input 
                         type="text" 
-                        name="ingredients"
+                        name="ingredients[]"
                      
                     >
                   
             </div>
-            <span onclick="myFunction()">Adicionar ingredientes</span>
-       </div>
+        </div>
+        <span class="add-ingredient">Adicionar ingredientes</span>
        
-        <div class="item">
+        <div class="item" id="preparations">
             <div>Modo de preparo</div>
-                <div>
+                <div class="preparation">
                     <input 
                         type="text" 
-                        name="preparation"
+                        name="preparation[]"
                      
                     >
             </div>
         </div>
+        <span class="add-preparation">Adicionar novo passo</span>
         <div class="item">
             <div>Informações adicionais</div>
                 <div>
@@ -77,12 +78,6 @@
     </form>
 </section>   
 
-<script>
-function myFunction() {
-  var x = document.createElement("INPUT");
-  x.setAttribute("type", "text");
-  x.setAttribute("name", "ingredients");
-  document.querySelector('.ingredients').appendChild(x);
-}
+<script src="/scripts/additems.js">
 </script>
 {% endblock %}

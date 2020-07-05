@@ -17,7 +17,7 @@ exports.edit = function(req, res){
 return res.send('/admin/recipes/:id/edit')
 }
 exports.post = function(req, res){
-  return res.send('req.body')
+  return res.send(req.body)
 }
 exports.put = function(req, res){
   return res.send('put')

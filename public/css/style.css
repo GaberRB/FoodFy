@@ -161,13 +161,16 @@ body{
 .img-recipe{
     display: grid;
     align-items: center;
-}
 
+}
+    
 .img-recipe h1, .img-recipe img, .img-recipe p{
-margin: 0 auto;
+    margin: 0 auto;
+
 }
 .img-recipe img{
     border-radius: 15px;
+    max-width: 700px;
 }
 
 .repice-info{

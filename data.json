@@ -1,0 +1,74 @@
+{
+  "recipes": [
+    {
+      "id": 1,
+      "image": "https://images.unsplash.com/photo-1576064535185-9f6e3f24b63e?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1050&q=80",
+      "title": "Egg red fire",
+      "author": "Joaquim",
+      "ingredients": [
+        "Ovo",
+        "Pimenta dedo de moça",
+        "Pimentão vermelho",
+        "Sal do himalaia"
+      ],
+      "preparation": [
+        "Fritar ovo",
+        "Adicionar sal",
+        "Partir pimentão"
+      ],
+      "information": ""
+    },
+    {
+      "id": 2,
+      "image": "https://images.unsplash.com/photo-1512852939750-1305098529bf?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1050&q=80",
+      "title": "Random Salad",
+      "author": "Gabriel",
+      "ingredients": [
+        "Alface",
+        "Cebola",
+        "Pepino",
+        "Repolho",
+        "Sal",
+        "Vinagre"
+      ],
+      "preparation": [
+        "Acrescentar todos os ingredientes em um recipiente",
+        "Adicionar sal e vinagre",
+        "Misturar tudo"
+      ],
+      "information": "Servir"
+    },
+    {
+      "id": 3,
+      "image": "https://images.unsplash.com/photo-1543738066-d1e2659d4317?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1012&q=80",
+      "title": "Pastel assado",
+      "author": "Ryan",
+      "ingredients": [
+        "Massa de pastel",
+        "Pimenta dedo de moça",
+        "lklkl"
+      ],
+      "preparation": [
+        "Assar",
+        "Misturar tudo"
+      ],
+      "information": ""
+    },
+    {
+      "id": 4,
+      "image": "https://images.unsplash.com/photo-1562447621-5947ec3e4723?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=634&q=80",
+      "title": "Polenta Frita",
+      "author": "Mateus",
+      "ingredients": [
+        "Fuba",
+        "Sal",
+        "Água",
+        "Pimenta"
+      ],
+      "preparation": [
+        "Fritar"
+      ],
+      "information": "Pimenta a gosto"
+    }
+  ]
+}

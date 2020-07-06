@@ -10,71 +10,8 @@
                 
         </div>
         
-        <div class="item">
-            <div>Imagem da receita</div>
-                <div>
-                    <input 
-                        type="url" 
-                        name="image"
-                        placeholder="http:\\"
-                       
-                    >
-            </div>
-        </div>
-        <div class="item">
-            <div>Nome</div>
-                <div>
-                    <input 
-                        type="text" 
-                        name="title"
-                                    
-                    >
-            </div>
-        </div>
-        <div class="item">
-            <div>Chef</div>
-                <div>
-                    <input 
-                        type="text" 
-                        name="author"
-                     
-                    >
-            </div>
-        </div>
-        <div class="item" id="ingredients">
-            <div>Ingredientes</div>
-                <div class="ingredient">
-                    <input 
-                        type="text" 
-                        name="ingredients[]"
-                     
-                    >
-                  
-            </div>
-        </div>
-        <span class="add-ingredient">Adicionar ingredientes</span>
-       
-        <div class="item" id="preparations">
-            <div>Modo de preparo</div>
-                <div class="preparation">
-                    <input 
-                        type="text" 
-                        name="preparation[]"
-                     
-                    >
-            </div>
-        </div>
-        <span class="add-preparation">Adicionar novo passo</span>
-        <div class="item">
-            <div>Informações adicionais</div>
-                <div>
-                    <input 
-                        type="text" 
-                        name="information"
-                     
-                    >
-            </div>
-        </div>
+       {% include 'admin/recipes/fields.njk' %}
+
     </form>
 </section>   
 

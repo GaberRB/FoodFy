@@ -1,9 +1,6 @@
 
 //Search recipes on click/ redirect for repice page
-
 const currentPage = location.pathname
-console.log(currentPage)
-console.log(currentPage.includes('admin'))
 const cards = document.querySelectorAll('.box-card');
 for (let i = 0; i < cards.length; i++) {
 
@@ -12,8 +9,8 @@ for (let i = 0; i < cards.length; i++) {
             if(!currentPage.includes('admin')){
                 window.location.href = `/recipe/${index}`
             }else if (currentPage.includes('admin')){
-                console.log('oi')
-                window.location.href = `/admin/recipes/${index}`
+                const id = document.querySelectorAll('#idRecipe')
+                window.location.href = `/admin/recipes/${id[index].value}`
             }
                 
         });

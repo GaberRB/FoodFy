@@ -6,17 +6,19 @@
       "title": "Egg red fire",
       "author": "Joaquim",
       "ingredients": [
-        "Ovo",
+        "Egg",
         "Pimenta dedo de moça",
         "Pimentão vermelho",
-        "Sal do himalaia"
+        "Sal do himalaia",
+        ""
       ],
       "preparation": [
         "Fritar ovo",
         "Adicionar sal",
-        "Partir pimentão"
+        "Partir pimentão",
+        "Misturar tudo"
       ],
-      "information": ""
+      "information": "Servir e pimenta a gosto"
     },
     {
       "id": 2,
@@ -53,22 +55,6 @@
         "Misturar tudo"
       ],
       "information": ""
-    },
-    {
-      "id": 4,
-      "image": "https://images.unsplash.com/photo-1562447621-5947ec3e4723?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=634&q=80",
-      "title": "Polenta Frita",
-      "author": "Mateus",
-      "ingredients": [
-        "Fuba",
-        "Sal",
-        "Água",
-        "Pimenta"
-      ],
-      "preparation": [
-        "Fritar"
-      ],
-      "information": "Pimenta a gosto"
     }
   ]
 }

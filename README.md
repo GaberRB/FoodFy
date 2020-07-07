@@ -11,7 +11,7 @@ Adm: http://localhost:5000/admin <br>
 Home: http://localhost:5000 <br>
 
 <h3> Admin FoodFy </h3>
-<img src="https://user-images.githubusercontent.com/28874479/85078805-a5ec5e80-b19b-11ea-8de6-4e2151c472ac.gif"/>
+<img src="https://user-images.githubusercontent.com/28874479/86690770-9b74f600-bfde-11ea-968c-7e229e63b466.gif"/>
 <h3>Foodfy na Pratica</h3>
 
 <img src="https://user-images.githubusercontent.com/28874479/85078805-a5ec5e80-b19b-11ea-8de6-4e2151c472ac.gif"/>

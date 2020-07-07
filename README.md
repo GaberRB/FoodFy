@@ -3,7 +3,7 @@
 Foodfy desafio bootcamp <a href="https://rocketseat.com.br/" target="_blank">Launchbase Rocketseat.</a> <img src="https://img.icons8.com/emoji/24/000000/rocket-emji.png"/>
 
 <h3> Como Usar: </h3>
- <p>Dependências: Express, Nunjucks <br>
+ <p>Dependências: Express, Nunjucks, method_override <br>
 <code> npm install </code>
 
 Navegar : <br>

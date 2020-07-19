@@ -1,0 +1,24 @@
+{% extends "layout_admin.njk" %}
+
+{% block content_admin %}
+   
+<section>
+    <form class="recipe-create" method="POST" action="/admin/recipes?_method=PUT">
+        <div class="admin-info">
+            <h2>Editar receita</h2>
+            <div><button type="submit">Salvar receita</button></div>
+                
+        </div>
+         <input type="hidden" name="id" value={{recipe.id}}>
+        
+        {% include 'admin/recipes/fields.njk' %}
+    </form>
+    <form id="form-delete" method="POST" action="/admin/recipes?_method=DELETE">
+        <input type="hidden" name="id" value={{recipe.id}}>
+        <button type="submit">Deletar</button>
+    </form>
+</section>   
+{% include 'confirm.njk' %}
+<script src="/scripts/additems.js">
+</script>
+{% endblock %}

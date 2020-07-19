@@ -1,6 +1,6 @@
 const fs = require('fs')
-const data = require('../data.json')
-const recipes = require("../data")
+const recipes = require("../../../data")
+const data = require('../../../data.json')
 exports.index = function(req, res){
   const recipe = data.recipes ;
  
@@ -60,7 +60,6 @@ exports.post = function(req, res){
 
     return res.redirect(`/admin/recipes/${id}`)
   })
- // return res.send(req.body)
 }
 exports.put = function(req, res){
   const { id } = req.body

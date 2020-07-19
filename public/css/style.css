@@ -287,3 +287,31 @@ span{
     border-radius: 6px;
     cursor: pointer;
 }
+/*----chef-----*/
+.chef-info{
+    display: grid;
+   
+}
+.chef-info .chef-img{
+    border-radius: 50%;
+    max-width: 400px;
+    max-height: 300px;
+    margin: 0 auto;
+}
+
+.chef-info div:nth-child(2){
+    font-weight: bold;
+    font-size: 20px;
+    margin: 10px auto;
+}
+.chef-info div:nth-child(3){
+    font-weight: normal;
+    margin: 0 auto;
+    color: gray;
+}
+.chef-info div:nth-child(4){
+    font-weight: bold;
+    font-size: 22px;
+    margin-left: 50px;
+
+}

@@ -1,0 +1,94 @@
+{% extends "layout_admin.njk" %}
+
+{% block content_admin %}
+
+    <section>
+        <div class="recipe-create">
+            <div class="admin-info">
+                <h2>Chef : {{chef.name}}</h2>
+                <div>
+                    <a href="#">Editar chef</a>
+
+                </div>
+            </div>
+            <div class="chef-info">
+                <img class="chef-img"src="{{chef.avatar_url}}" alt="">
+
+                <div>{{chef.name}}</div>
+                <div>10 Receitas</div>
+
+                <div>Receitas</div>
+                
+                
+            </div>
+            <div class="box-cards">
+                    <div class="box-card">
+                        <div class="box-card-img">
+                            <img src="/assets/burger.png" alt="burger">
+                        </div>
+                        <div class="box-name">
+                            <p>Triplo Burger Bancon</p>
+                        </div>
+                        <div class="box-info">
+                            <p>Por Jorge Relato</p>
+                        </div>
+                    </div>
+                    <div class="box-card">
+                        <div class="box-card-img">
+                            <img src="/assets/burger.png" alt="burger">
+                        </div>
+                        <div class="box-name">
+                            <p>Triplo Burger Bancon</p>
+                        </div>
+                        <div class="box-info">
+                            <p>Por Jorge Relato</p>
+                        </div>
+                    </div>
+                    <div class="box-card">
+                        <div class="box-card-img">
+                            <img src="/assets/burger.png" alt="burger">
+                        </div>
+                        <div class="box-name">
+                            <p>Triplo Burger Bancon</p>
+                        </div>
+                        <div class="box-info">
+                            <p>Por Jorge Relato</p>
+                        </div>
+                    </div>
+                    <div class="box-card">
+                        <div class="box-card-img">
+                            <img src="/assets/burger.png" alt="burger">
+                        </div>
+                        <div class="box-name">
+                            <p>Triplo Burger Bancon</p>
+                        </div>
+                        <div class="box-info">
+                            <p>Por Jorge Relato</p>
+                        </div>
+                    </div>
+                    <div class="box-card">
+                        <div class="box-card-img">
+                            <img src="/assets/burger.png" alt="burger">
+                        </div>
+                        <div class="box-name">
+                            <p>Triplo Burger Bancon</p>
+                        </div>
+                        <div class="box-info">
+                            <p>Por Jorge Relato</p>
+                        </div>
+                    </div>
+                    <div class="box-card">
+                        <div class="box-card-img">
+                            <img src="/assets/burger.png" alt="burger">
+                        </div>
+                        <div class="box-name">
+                            <p>Triplo Burger Bancon</p>
+                        </div>
+                        <div class="box-info">
+                            <p>Por Jorge Relato</p>
+                        </div>
+                    </div>
+                </div>
+        </section>
+
+    {% endblock %}

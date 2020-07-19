@@ -1,0 +1,30 @@
+{% extends "layout_admin.njk" %}
+
+{% block content_admin %}
+       <div class="admin-info">
+            <h2>Cadastrar chef</h2>
+            <div><a href="/admin/chefs/create">Criar chef</a></div>
+                
+        </div>
+       <section class="box-cards">
+        
+            
+        {% for item in items %}
+
+            <div class="box-card">
+                <div class="box-card-img">
+                    <img src="{{item.image}}" alt="Imagem do {{item.title}}">
+                </div>
+                <div class="box-name">
+                    <p>{{item.title}}</p>
+                </div>
+                <div class="box-info">
+                    <p><img src="/assets/chef-1.png" alt="">  {{item.author}}</p>
+                </div>
+                <input id="idRecipe" type="hidden" value={{item.id}} >
+            </div>
+        {% endfor %}
+
+    </section>
+     <script src="/scripts/script.js"></script>
+{% endblock%}

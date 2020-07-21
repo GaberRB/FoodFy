@@ -7,11 +7,11 @@ module.exports = {
             SELECT *
             FROM chefs
             ORDER BY name ASC
-             `),function(err, results){
+             `,function(err, results){
                  if(err) throw `Database error! - all ${err}`
 
                  callback(results.rows)
-             }
+             })
     },
     create(data, callback){
 
@@ -26,17 +26,17 @@ module.exports = {
             )RETURNING id
         `
         const values = [
-            data.title,
-            data.image,
+            data.name,
+            data.avatar_url,
             date(Date.now()).iso
 
         ]
         
-        db.query(query, values), function(err, results){
+        db.query(query, values, function(err, results){
             if(err) throw `Database error! - create ${err}`
-
+           
             callback(results.rows[0])
-        }
+        })
     },
     find(id, callback){
         db.query(`
@@ -47,6 +47,34 @@ module.exports = {
             if(err) throw `Database error! - Show ${err}`
 
             callback(results.rows[0])
+        })
+    },
+    update(data, callback){
+
+        const query = `
+            UPDATE chefs SET
+                name = ($1),
+                avatar_url = ($2)
+            WHERE id = $3
+        `
+        const values = [
+            data.name,
+            data.avatar_url,
+            data.id
+        ]
+        console.log(query)
+        console.log(values)
+        db.query(query, values, function(err, results){
+            if (err) throw `Database error! -update ${err}`
+
+            callback()
+        })
+    },
+    delete(id, callback){
+        db.query(`DELETE FROM chefs WHERE id = $1`, [id],
+        function(err, results){
+            if(err) throw `Database error! -delete ${err}`
+             callback()
         })
     }
 }

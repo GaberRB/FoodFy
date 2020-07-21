@@ -2,26 +2,26 @@
 
 {% block content_admin %}
        <div class="admin-info">
-            <h2>Cadastrar chef</h2>
+            <h2>Gerenciar chefs</h2>
             <div><a href="/admin/chefs/create">Criar chef</a></div>
                 
         </div>
        <section class="box-cards">
         
             
-        {% for item in items %}
+        {% for chef in chefs %}
 
             <div class="box-card">
                 <div class="box-card-img">
-                    <img src="{{item.image}}" alt="Imagem do {{item.title}}">
+                    <img src="{{chef.avatar_url}}" alt="Imagem do {{item.title}}">
                 </div>
                 <div class="box-name">
-                    <p>{{item.title}}</p>
+                    <p>{{chef.name}}</p>
                 </div>
                 <div class="box-info">
                     <p><img src="/assets/chef-1.png" alt="">  {{item.author}}</p>
                 </div>
-                <input id="idRecipe" type="hidden" value={{item.id}} >
+                <input id="idChef" type="hidden" value={{chef.id}} >
             </div>
         {% endfor %}
 

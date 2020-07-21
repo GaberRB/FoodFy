@@ -3,22 +3,22 @@
 {% block content_admin %}
    
 <section>
-    <form class="recipe-create" method="POST" action="/admin/recipes?_method=PUT">
+    <form class="recipe-create" method="POST" action="/admin/chefs?_method=PUT">
         <div class="admin-info">
-            <h2>Editar receita</h2>
-            <div><button type="submit">Salvar receita</button></div>
+            <h2>Editando Chef</h2>
+            <div><button type="submit">Salvar chef</button>
+                 
+            </div>
                 
         </div>
-         <input type="hidden" name="id" value={{recipe.id}}>
         
-        {% include 'admin/recipes/fields.njk' %}
+       {% include 'admin/chefs/fields.njk' %}
+        <input type="hidden" name="id" value="{{chef.id}}">
     </form>
-    <form id="form-delete" method="POST" action="/admin/recipes?_method=DELETE">
-        <input type="hidden" name="id" value={{recipe.id}}>
-        <button type="submit">Deletar</button>
+    <form method="POST" action="/admin/chefs?_method=DELETE">
+        <input type="hidden" name="id" value={{chef.id}}>
+        <button type="submit">Deletar chef</button>
     </form>
 </section>   
-{% include 'confirm.njk' %}
-<script src="/scripts/additems.js">
-</script>
+
 {% endblock %}

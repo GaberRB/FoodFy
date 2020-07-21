@@ -6,11 +6,17 @@ for (let i = 0; i < cards.length; i++) {
 
     (function (index) {
         cards[i].addEventListener("click", function () {
-            if(!currentPage.includes('admin')){
+            if(!currentPage.includes('admin/recipes')){
                 window.location.href = `/recipe/${index}`
-            }else if (currentPage.includes('admin')){
+            }else if (currentPage.includes('admin/recipes')){
                 const id = document.querySelectorAll('#idRecipe')
                 window.location.href = `/admin/recipes/${id[index].value}`
+            }
+            if(!currentPage.includes('admin/chefs')){
+                window.location.href = `/recipe/${index}`
+            }else if (currentPage.includes('admin/chefs')){
+                const id = document.querySelectorAll('#idChef')
+                window.location.href = `/admin/chefs/${id[index].value}`
             }
                 
         });

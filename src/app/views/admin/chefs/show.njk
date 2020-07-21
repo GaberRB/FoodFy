@@ -7,12 +7,15 @@
             <div class="admin-info">
                 <h2>Chef : {{chef.name}}</h2>
                 <div>
-                    <a href="#">Editar chef</a>
+                    <a href="/admin/chefs/{{chef.id}}/edit">Editar chef</a>
 
                 </div>
             </div>
             <div class="chef-info">
-                <img class="chef-img"src="{{chef.avatar_url}}" alt="">
+                <div class="chef-img" style="background: url({{chef.avatar_url}}) no-repeat center center /cover">
+                    
+                </div>
+                
 
                 <div>{{chef.name}}</div>
                 <div>10 Receitas</div>

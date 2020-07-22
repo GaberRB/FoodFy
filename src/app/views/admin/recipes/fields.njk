@@ -23,13 +23,14 @@
         </div>
         <div class="item">
             <div>Chef</div>
-                <div>
-                    <input 
-                        type="text" 
-                        name="author"
-                        value="{{recipe.author}}"
-                     
-                    >
+                
+                <select name="chef_id">
+                    {% for chef in chefsOptions %}
+                    <option value="{{chef.id}}"
+                        
+                    >{{chef.name}}</option>
+                    {% endfor %}
+                </select>
             </div>
         </div>
         <div class="item" id="ingredients">
@@ -59,8 +60,7 @@
                 {% endfor %}
         </div>
         <span class="add-ingredient">Adicionar ingredientes</span>
-        <span class="del-ingredient">Remover ingredientes</span>
-       
+               
         <div class="item" id="preparations">
             <div>Modo de preparo</div>
                 {% for preparation in recipe.preparation %}

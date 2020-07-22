@@ -2,19 +2,18 @@
 
 {% block content_admin %}
    <div class="admin-info">
-       <h2>{{items.title}}</h2>
-        <div><a href="/admin/recipes/{{items.id}}/edit">Editar receita</a></div>
+       <h2>{{recipe.title}}</h2>
+        <div><a href="/admin/recipes/{{recipe.id}}/edit">Editar receita</a></div>
    </div>
     
-    
-
     <div class="img-recipe">
-        <img src="{{items.image}}" alt="">
-        <h1>{{items.title}}</h1>
-        <p>Por
-            {{items.author}}</p>
+        <div class="recipe-img" style="background: url({{recipe.image}}) no-repeat center center /cover">
+        
     </div>
     <div class="repice-info">
+        <h1>{{recipe.title}}</h1>
+        <p>Por
+            {{recipe.chef_id}}</p>
         <div class="info-ingredients">
             <h2>Ingredientes</h2>
             <a class="info-hidden" id="1">
@@ -22,7 +21,7 @@
 
         </div>
         <ul class="desc" id="p1">
-            {% for item in items.ingredients %}
+            {% for item in recipe.ingredients %}
                 <li>{{item}}</li>
             {% endfor %}
 
@@ -34,20 +33,20 @@
 
         </div>
         <ul class="desc" id="p2">
-            {% for item in items.preparation %}
+            {% for item in recipe.preparation %}
                 <li>{{item}}</li>
             {% endfor %}
 
         </ul>
 
-        {% if items.information %}
+        {% if recipe.information %}
             <div class="info-add">
                 <h2>Informações adicionais</h2>
                 <a class="info-hidden" id="3">
                     Esconder</a>
 
             </div>
-            <p class="desc" id="p3">{{items.information}}</p>
+            <div class="desc" id="p3">{{recipe.information}}</div>
         {% endif %}
 
     </div>

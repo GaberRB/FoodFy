@@ -5,8 +5,8 @@ module.exports = {
     all(callback){
         db.query(`
             SELECT *
-            FROM chefs
-            ORDER BY name ASC
+            FROM recipes
+            ORDER BY title ASC
              `,function(err, results){
                  if(err) throw `Database error! - all ${err}`
 
@@ -17,17 +17,25 @@ module.exports = {
 
         
         const query = `
-            INSERT INTO chefs (
-                name, 
-                avatar_url,
+            INSERT INTO recipes (
+                chef_id, 
+                image,
+                title,
+                ingredients,
+                preparation,
+                information,
                 created_at
             )VALUES (
-                $1, $2, $3
+                $1, $2, $3, $4, $5, $6, $7
             )RETURNING id
         `
         const values = [
-            data.name,
-            data.avatar_url,
+            data.chef_id,
+            data.image,
+            data.title,
+            data.ingredients,
+            data.preparation,
+            data.information,
             date(Date.now()).iso
 
         ]
@@ -41,7 +49,7 @@ module.exports = {
     find(id, callback){
         db.query(`
             SELECT *
-            FROM chefs
+            FROM recipes
             WHERE id = $1
         `, [id], function(err, results){
             if(err) throw `Database error! - Show ${err}`
@@ -52,17 +60,24 @@ module.exports = {
     update(data, callback){
 
         const query = `
-            UPDATE chefs SET
-                name = ($1),
-                avatar_url = ($2)
-            WHERE id = $3
+            UPDATE recipes SET
+                chef_id = ($1),
+                image = ($2),
+                title = ($3),
+                ingredients = ($4),
+                preparation = ($5),
+                information = ($6)
+            WHERE id = $7
         `
         const values = [
-            data.name,
-            data.avatar_url,
+            data.chef_id,
+            data.image,
+            data.title,
+            data.ingredients,
+            data.preparation,
+            data.information,
             data.id
         ]
-        
         db.query(query, values, function(err, results){
             if (err) throw `Database error! -update ${err}`
 
@@ -70,10 +85,16 @@ module.exports = {
         })
     },
     delete(id, callback){
-        db.query(`DELETE FROM chefs WHERE id = $1`, [id],
+        db.query(`DELETE FROM recipes WHERE id = $1`, [id],
         function(err, results){
             if(err) throw `Database error! -delete ${err}`
              callback()
+        })
+    },
+    ChefSelectOptions(callback){
+        db.query(`SELECT name, id FROM chefs`, function(err, results){
+            if(err) throw `Database error! -ChefSelectOptions ${err}`
+            callback(results.rows) 
         })
     }
 }

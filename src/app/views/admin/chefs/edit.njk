@@ -3,8 +3,12 @@
 {% block content_admin %}
    
 <section>
+     <form class="button-delete" method="POST" action="/admin/chefs?_method=DELETE">
+        <input type="hidden" name="id" value={{chef.id}}>
+        <button class="button-delete"type="submit">Deletar chef</button>
+    </form>
     <form class="recipe-create" method="POST" action="/admin/chefs?_method=PUT">
-        <div class="admin-info">
+        <div class="button-edit">
             <h2>Editando Chef</h2>
             <div><button type="submit">Salvar chef</button>
                  
@@ -15,10 +19,7 @@
        {% include 'admin/chefs/fields.njk' %}
         <input type="hidden" name="id" value="{{chef.id}}">
     </form>
-    <form method="POST" action="/admin/chefs?_method=DELETE">
-        <input type="hidden" name="id" value={{chef.id}}>
-        <button type="submit">Deletar chef</button>
-    </form>
+   
 </section>   
 
 {% endblock %}

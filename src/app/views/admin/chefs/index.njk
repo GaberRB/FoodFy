@@ -13,18 +13,26 @@
 
             <div class="box-card">
                 <div class="box-card-img">
-                    <img src="{{chef.avatar_url}}" alt="Imagem do {{item.title}}">
+                    <img src="{{chef.avatar_url}}" alt="Imagem do {{item.name}}">
                 </div>
                 <div class="box-name">
-                    <p>{{chef.name}}</p>
+               
+                    <p><img src="/assets/chef-1.png" alt="">  {{chef.name}}</p>
+              
+                    
                 </div>
-                <div class="box-info">
-                    <p><img src="/assets/chef-1.png" alt="">  {{item.author}}</p>
-                </div>
+                
                 <input id="idChef" type="hidden" value={{chef.id}} >
             </div>
         {% endfor %}
 
     </section>
+     <div class="pagination"
+            data-page={{pagination.page}}
+            data-total={{pagination.total}}
+            data-filter={{filter}}
+        >
+
+        </div>
      <script src="/scripts/script.js"></script>
 {% endblock%}

@@ -130,21 +130,20 @@ body{
 }
 .box-card:hover{
     box-shadow: inset 0 0 1em black, 0 0 1em lightcoral; 
-    transition: 500ms;
-    border-radius: 8px;
-    
+    transition: 700ms;
+    border-radius: 15%;
+        
 }
 
 .box-card-img{
-    max-width: 800px;
-    max-height: 800px;
-    padding: 65px;
+    padding: 100px;
     display: grid;
     align-items: center;
     position: relative;
+    
 }
 .box-card-img img{
-    border-radius: 15px;
+    border-radius: 15%;
     margin-bottom: 5px;
     width: 100%;
     height: 100%;
@@ -214,18 +213,36 @@ body{
 /* ===Admin=== */
 .header-admin{
     background-color: #111;
+    display: grid;
+    grid-template-columns: 200px 100px 64px;
+    align-items: center;
     width: 100%;
     padding: 32px;
     box-sizing: border-box;
     margin-bottom: 36x;
 }
-.admin-info a, 
+.header-admin h1 a{
+    font-size: 32px;
+    
+}
+.header-admin a{
+    text-decoration: none;
+    font-size: 18px;
+    color: white;
+}
+.header-admin a:hover{
+    background-image: url(https://thumbs.gfycat.com/AbandonedAnguishedCatfish-max-1mb.gif);
+    transform: 700ms;
+    width: 51px;
+}
+.button-edit a,.admin-info a, .button-edit h2,
 .admin-info h2{
     color: black;
     font-size: 16px;
     padding: 8px;
+    text-decoration: none;
 }
-.admin-info a, button[type="submit"]{
+.button-edit a,.admin-info a, button[type="submit"]{
     text-decoration: none;
     font-size: 16px;
     background-color: black;
@@ -317,4 +334,18 @@ span{
     font-size: 22px;
     margin-left: 50px;
 
+}
+.button-delete{
+    float: right;
+    margin-top: 26px;
+    margin-left: 0;
+    margin-right: 0;
+
+}
+.button-edit{
+    display: grid;
+    grid-template-columns: 200px 800px;
+    align-items: center;
+    margin: 26px auto;
+    text-align: center;
 }

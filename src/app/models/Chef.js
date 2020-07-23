@@ -89,5 +89,32 @@ module.exports = {
             if(err) throw `Database error! -recipeOnChef ${err}`
              callback(results.rows)
         })
+    },
+    paginate(params){
+        const { filter, limit, offset, callback} = params
+
+        let query="",
+            filterQuery="",
+            totalQuery= `(SELECT COUNT(*) FROM chefs) AS total`
+
+        if( filter ){
+            filterQuery = `WHERE chefs.name ILIKE '%${filter}%'`
+
+            totalQuery = `(SELECT COUNT(*) FROM chefs
+                            ${filterQuery}
+                            )AS total`
+        }
+        
+        query = `
+            SELECT chefs.*, ${totalQuery}
+            FROM chefs
+            ${filterQuery}
+            LIMIT $1 OFFSET $2
+        `
+        db.query(query, [limit, offset], function(err, results){
+            if(err) throw `Database error -paginate ${err}`
+
+            callback(results.rows)
+        })
     }
 }

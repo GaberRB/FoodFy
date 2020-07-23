@@ -1,6 +1,7 @@
 {% extends "layout_admin.njk" %}
 
 {% block content_admin %}
+    <div class="contents index">
        <div class="admin-info">
             <h2>Gerenciar chefs</h2>
             <div><a href="/admin/chefs/create">Criar chef</a></div>
@@ -27,13 +28,14 @@
             </div>
         {% endfor %}
 
+    
+     
     </section>
-     <div class="pagination"
+    <div class="pagination"
             data-page={{pagination.page}}
             data-total={{pagination.total}}
             data-filter={{filter}}
-        >
-
-        </div>
+        ></div>
+    </div>
      <script src="/scripts/script.js"></script>
 {% endblock%}

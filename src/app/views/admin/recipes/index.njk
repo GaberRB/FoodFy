@@ -1,6 +1,7 @@
 {% extends "layout_admin.njk" %}
 
 {% block content_admin %}
+    <div class="contents index">
        <div class="admin-info">
             <h2>Editar receita</h2>
             <div><a href="/admin/recipes/create">Criar receita</a></div>
@@ -26,5 +27,11 @@
         {% endfor %}
 
     </section>
+    <div class="pagination"
+            data-page={{pagination.page}}
+            data-total={{pagination.total}}
+            data-filter={{filter}}
+        ></div>
+    </div>
      <script src="/scripts/script.js"></script>
 {% endblock%}

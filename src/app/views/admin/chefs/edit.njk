@@ -2,7 +2,7 @@
 
 {% block content_admin %}
    
-<section>
+<section class="contents">
      <form id="form-delete"class="button-delete" method="POST" action="/admin/chefs?_method=DELETE">
         <input type="hidden" name="id" value={{chef.id}}>
         <button class="button-delete"type="submit">Deletar chef</button>

@@ -16,25 +16,67 @@ for (let i = 0; i < cards.length; i++) {
         });
     })(i);
 }
-/*===Show/hidden page recipe ===*/
-const divInfo = document.querySelector('.repice-info')
-const descriptions = divInfo.querySelectorAll('.info-hidden');
-function hiddenShow(id) {
-    let display = document.getElementById(`p${id}`).style.display;
-    if (display == "none") {
-        document.getElementById(`p${id}`).style.display = 'block';
-        document.getElementById(id).innerHTML = 'Esconder';
-    }
-    else {
-        document.getElementById(`p${id}`).style.display = 'none';
-        document.getElementById(id).innerHTML = 'Mostrar';
-    }
-}
-for (let description of descriptions) {
 
-    description.addEventListener('click', function () {
-        let pId = description.getAttribute('id')
-        hiddenShow(pId)
-    })
+/*pagination*/
+//paginação
+function paginate(selectedPage, totalPages) {
+    let pages = [],
+        oldPage
+
+    for (let currentPage = 1; currentPage <= totalPages; currentPage++) {
+
+
+        const firstAndLastPage = currentPage == 1 || currentPage == totalPages
+        const pagesAfterSelectedPage = currentPage <= selectedPage + 2
+        const pagesBeforeSelectedPage = currentPage >= selectedPage - 2
+        if (firstAndLastPage || pagesBeforeSelectedPage && pagesAfterSelectedPage) {
+
+
+            if (oldPage && currentPage - oldPage > 2) {
+                pages.push('...')
+
+            }
+
+            if (oldPage && currentPage - oldPage == 2) {
+                pages.push(oldPage + 1)
+
+            }
+
+            pages.push(currentPage)
+            oldPage = currentPage
+
+        }
+
+    }
+    return pages
+}
+function createPaginaton(pagination){
+    const filter = pagination.dataset.filter
+    const page = +pagination.dataset.page
+    const total = +pagination.dataset.total
+    const pages = paginate(page, total)
+    let elements = ""
+
+    for (let page of pages) {
+        if (String(page).includes('...')) {
+            elements += `<span>${page}</span>`
+        } else {
+            if (filter) {
+                elements += `<a href="?page=${page}&filter=${filter}">${page}</a>`
+            } else {
+                elements += `<a href="?page=${page}">${page}</a>`
+            }
+
+        }
+
+    }
+
+    pagination.innerHTML = elements
+
 }
 
+const pagination = document.querySelector('.pagination')
+if (pagination) {
+    createPaginaton(pagination)
+
+}

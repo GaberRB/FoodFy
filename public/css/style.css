@@ -228,7 +228,8 @@ ul {
     color: black;
     font-size: 16px;
     padding: 8px;
-    text-decoration: none;
+    text-decoration: none
+    ;
 }
 .button-edit a,.admin-info a, button[type="submit"]{
     text-decoration: none;
@@ -262,7 +263,7 @@ h3{
 
 /* ===form=== */
 
-section{
+.contents{
     background-color: whitesmoke;
     width: 800px;
     min-height: 400px;
@@ -349,4 +350,33 @@ span{
     margin: 0 auto;
     width: 1000px;
     height: 400px;
+}
+
+.index{
+    display: grid;
+    grid-template: 64px 1fr 64px / 1fr ;
+}
+.contents .admin-info{
+    margin: 32px 0;
+    align-self: start;
+}
+
+.pagination{
+    margin: 0;
+    align-self: end;
+    justify-self: center;
+
+}
+
+.pagination a,
+.pagination span{
+    font-size: 18px;
+    color: black;
+    text-decoration: none;
+    margin-right: 16px;
+}
+
+.pagination a:hover{
+    border-bottom: black 1px solid;
+    transform: 700ms;
 }

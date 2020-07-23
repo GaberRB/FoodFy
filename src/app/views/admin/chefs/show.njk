@@ -18,80 +18,33 @@
                 
 
                 <div>{{chef.name}}</div>
-                <div>10 Receitas</div>
+                <div>{{chef.total_recipes}} Receitas</div>
 
                 <div>Receitas</div>
                 
                 
             </div>
             <div class="box-cards">
-                    <div class="box-card">
+                {% for recipe in recipes %}
+                    <div onclick="redirectRecipe('{{recipe.id}}')" class="box-card">
                         <div class="box-card-img">
-                            <img src="/assets/burger.png" alt="burger">
+                            <img src="{{recipe.image}}" alt="{{recipe.title}}">
                         </div>
                         <div class="box-name">
-                            <p>Triplo Burger Bancon</p>
+                            <p>{{recipe.title}}</p>
                         </div>
                         <div class="box-info">
-                            <p>Por Jorge Relato</p>
+                            <p>Por {{chef.name}}</p>
                         </div>
                     </div>
-                    <div class="box-card">
-                        <div class="box-card-img">
-                            <img src="/assets/burger.png" alt="burger">
-                        </div>
-                        <div class="box-name">
-                            <p>Triplo Burger Bancon</p>
-                        </div>
-                        <div class="box-info">
-                            <p>Por Jorge Relato</p>
-                        </div>
-                    </div>
-                    <div class="box-card">
-                        <div class="box-card-img">
-                            <img src="/assets/burger.png" alt="burger">
-                        </div>
-                        <div class="box-name">
-                            <p>Triplo Burger Bancon</p>
-                        </div>
-                        <div class="box-info">
-                            <p>Por Jorge Relato</p>
-                        </div>
-                    </div>
-                    <div class="box-card">
-                        <div class="box-card-img">
-                            <img src="/assets/burger.png" alt="burger">
-                        </div>
-                        <div class="box-name">
-                            <p>Triplo Burger Bancon</p>
-                        </div>
-                        <div class="box-info">
-                            <p>Por Jorge Relato</p>
-                        </div>
-                    </div>
-                    <div class="box-card">
-                        <div class="box-card-img">
-                            <img src="/assets/burger.png" alt="burger">
-                        </div>
-                        <div class="box-name">
-                            <p>Triplo Burger Bancon</p>
-                        </div>
-                        <div class="box-info">
-                            <p>Por Jorge Relato</p>
-                        </div>
-                    </div>
-                    <div class="box-card">
-                        <div class="box-card-img">
-                            <img src="/assets/burger.png" alt="burger">
-                        </div>
-                        <div class="box-name">
-                            <p>Triplo Burger Bancon</p>
-                        </div>
-                        <div class="box-info">
-                            <p>Por Jorge Relato</p>
-                        </div>
-                    </div>
-                </div>
+                {% endfor %}
+                    
+       
         </section>
+        <script>
+            function redirectRecipe(id){
+                window.location.href = `/admin/recipes/${id}`
+            }
+        </script>
 
     {% endblock %}

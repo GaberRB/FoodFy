@@ -1,7 +1,5 @@
 const Intl = require('intl')
-const data = require('../../../data.json')
 const Recipe = require('../models/Recipe')
-//const recipes = require("../../../data")
 
 module.exports = {
 
@@ -44,7 +42,11 @@ module.exports = {
         Recipe.find(req.params.id, function(recipe){
             if(!recipe) return res.send('Recipe não encontrado')
 
-            return res.render('admin/recipes/edit', {recipe})
+            Recipe.ChefSelectOptions(function(options){
+                return res.render('admin/recipes/edit', {recipe, chefsOptions: options})
+            })
+
+            
         })
     },
     put(req, res){

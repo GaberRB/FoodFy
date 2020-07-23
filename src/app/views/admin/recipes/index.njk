@@ -9,19 +9,19 @@
        <section class="box-cards">
         
             
-        {% for item in items %}
+        {% for recipe in recipes %}
 
             <div class="box-card">
                 <div class="box-card-img">
-                    <img src="{{item.image}}" alt="Imagem do {{item.title}}">
+                    <img src="{{recipe.image}}" alt="Imagem do {{recipe.title}}">
                 </div>
                 <div class="box-name">
-                    <p>{{item.title}}</p>
+                    <p>{{recipe.title}}</p>
                 </div>
                 <div class="box-info">
-                    <p><img src="/assets/chef-1.png" alt="">  {{item.author}}</p>
+                    <p><img src="/assets/chef-1.png" alt="">  {{recipe.author}}</p>
                 </div>
-                <input id="idRecipe" type="hidden" value={{item.id}} >
+                <input id="idAdmRecipe" type="hidden" value={{recipe.id}} >
             </div>
         {% endfor %}
 

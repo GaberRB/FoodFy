@@ -4,9 +4,10 @@ const Intl = require('intl')
 module.exports = {
     all(callback){
         db.query(`
-            SELECT *
-            FROM recipes
-            ORDER BY title ASC
+            SELECT recipes.*,chefs.name AS author
+            FROM recipes 
+            LEFT JOIN chefs ON (chefs.id = recipes.chef_id)
+            ORDER BY recipes.title ASC
              `,function(err, results){
                  if(err) throw `Database error! - all ${err}`
 
@@ -48,9 +49,10 @@ module.exports = {
     },
     find(id, callback){
         db.query(`
-            SELECT *
-            FROM recipes
-            WHERE id = $1
+            SELECT recipes.*,chefs.name AS author
+            FROM recipes 
+            LEFT JOIN chefs ON (chefs.id = recipes.chef_id)
+            WHERE recipes.id = $1
         `, [id], function(err, results){
             if(err) throw `Database error! - Show ${err}`
 

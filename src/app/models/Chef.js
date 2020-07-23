@@ -4,9 +4,11 @@ const Intl = require('intl')
 module.exports = {
     all(callback){
         db.query(`
-            SELECT *
-            FROM chefs
-            ORDER BY name ASC
+            SELECT chefs.*,COUNT(recipes) AS total_recipes
+            FROM chefs 
+            LEFT JOIN recipes ON (chefs.id = recipes.chef_id)
+            GROUP BY chefs.id
+            ORDER BY chefs.name ASC
              `,function(err, results){
                  if(err) throw `Database error! - all ${err}`
 
@@ -40,9 +42,12 @@ module.exports = {
     },
     find(id, callback){
         db.query(`
-            SELECT *
-            FROM chefs
-            WHERE id = $1
+            SELECT chefs.*, COUNT(recipes) AS total_recipes
+            FROM chefs 
+            LEFT JOIN recipes ON (chefs.id = recipes.chef_id)
+            WHERE chefs.id = $1
+            GROUP BY chefs.id
+                        
         `, [id], function(err, results){
             if(err) throw `Database error! - Show ${err}`
 
@@ -74,6 +79,15 @@ module.exports = {
         function(err, results){
             if(err) throw `Database error! -delete ${err}`
              callback()
+        })
+    },
+    recipeOnChef(id, callback){
+        db.query(`SELECT recipes.id, recipes.title, recipes.image
+                 FROM recipes 
+                 WHERE chef_id = $1`, [id],
+        function(err, results){
+            if(err) throw `Database error! -recipeOnChef ${err}`
+             callback(results.rows)
         })
     }
 }

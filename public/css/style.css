@@ -12,72 +12,64 @@ body{
     color: black;
 }
 
-.header-box{
-    padding: 30px;
-    margin: 24px;
-   
-}
-.links{
-    display: grid;
-    grid-template-columns: 1fr 1fr 1fr;
-    gap: 20px;
-    max-width: 650px;
-    align-items: center;
-
-}
-.links h1{
-    font-weight: normal;
-    width: 90px;
-    padding: 24px;
-    /* height: 27px;
-    margin-top: 36px;
-    margin-left: 26px;
-    margin-right: 123px; */
-}
-
-.links h1 a{
-    font-size: 24px;
-}
-
-.links a{
-    
-    width: 42px;
-    height: 19px;
-    padding: 24px;
-    color: black;
-    font-size: 18px;
-    line-height: 30px;
-    text-decoration: none;
-}
 
 .box-description{
     display: flex;
     justify-content: space-between;
-    background-color: #f8dfbb;
-    width: 940px;
-    height: 366px;
-    padding: 40px;
-    margin: 50px auto;
-    border-radius: 30px;
+    background-color: #383838;
+    max-width: 800px;
+    max-height: 400x;
+    padding: 45px;
+    margin: 45px auto;
+    border-radius: 100px 15px;
+
+    box-shadow: 0px 3px 5px 10px rgba(0, 0, 0, 0.4);
+
+    animation-name: up;
+    animation-duration: 0.9s;
+    animation-timing-function: ease-in-out;    
         
 }
+@keyframes up{
+    from{
+        opacity: 0;
+        width: 0;
+        background-color: wheat;
+        transform: translateY(30px);
+
+
+    }to{
+        opacity: 1;
+        width: 800px;
+                
+    }
+}
+
 
 .box-description-title{
-    margin-top: 117px;
-    margin-bottom: 10px;
-
-   
-    
+    display: inline;
+    margin-top: 100px;    
+}
+.box-description-title h2{
+    font-weight: bold;
+    font-size: 30px;
+}
+.box-description-title p{
+    font-size: 20px;
+}
+.box-description-title h2,
+.box-description-title p{
+    color: wheat;
 }
 .box-description-title p{
     font-weight: normal;
-    width: 316px;
+    margin-top: 16px;
+    width: 500px;
     height: 84px;
     
 }
 .box-description-img{
    width: 216px;
-   height: 300px;
    margin-right: 100px;
    margin-top: 66px;
 }
@@ -202,7 +194,7 @@ ul {
 .header-admin{
     background-color: #111;
     display: grid;
-    grid-template-columns: 200px 100px 64px;
+    grid-template-columns: 200px 100px 800px 500px;
     align-items: center;
     width: 100%;
     padding: 32px;

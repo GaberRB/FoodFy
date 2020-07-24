@@ -1,6 +1,7 @@
 const db = require ('../../config/db')
 const { date } = require('../../lib/utils')
 const Intl = require('intl')
+const { off } = require('../../config/db')
 module.exports = {
     all(callback){
         db.query(`
@@ -98,5 +99,38 @@ module.exports = {
             if(err) throw `Database error! -ChefSelectOptions ${err}`
             callback(results.rows) 
         })
+    },
+    paginate(params){
+        const {filter, limit, offeset, callback} = params
+
+        let query = "",
+            filterQuery = "",
+            totalQuery = `(SELECT COUNT(*) FROM recipes) AS total`
+
+        if ( filter ){
+            filterQuery = `WHERE recipes.title ILIKE '%${filter}%'
+                            OR chefs.name ILIKE '%${filter}%'
+                            `
+        totalQuery = `(
+            SELECT COUNT(*) FROM recipes
+            ${filterQuery}
+            )AS total`                            
+        }
+
+        query = `
+            SELECT recipes.*, (chefs.name) AS author, ${totalQuery}
+            FROM recipes
+            ${filterQuery}
+            LEFT JOIN chefs ON (recipes.chef_id = chefs.id)
+            GROUP BY recipes.id, chefs.name
+            LIMIT $1 OFFSET $2
+            `
+
+        db.query(query, [limit, offeset], function(err, results){
+            if(err) throw `Database error - paginate ${err}`
+
+            callback(results.rows)
+        })
+
     }
 }

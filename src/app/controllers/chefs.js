@@ -1,6 +1,4 @@
-const fs = require('fs')
 const Intl = require('intl')
-const data = require('../../../data.json')
 const Chef = require('../models/Chef')
 //const chefs = require("../../../data")
 

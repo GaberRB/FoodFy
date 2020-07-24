@@ -4,12 +4,30 @@ const Recipe = require('../models/Recipe')
 module.exports = {
 
     index(req, res){
-        Recipe.all(function(recipes){
-            
-            return res.render('admin/recipes/index', {recipes})    
-        })
-        
-        
+
+        let {filter, page, limit } = req.query
+
+        page = page || 1
+        limit = limit || 3
+
+        let offset = limit * (page - 1)
+
+        const params = {
+            filter,
+            page,
+            limit,
+            offset,
+            callback(recipes){
+                const pagination = {
+                    total: Math.ceil(recipes[0].total / limit),
+                    page
+                }
+
+                return res.render('admin/recipes/index', {recipes, pagination, filter})
+            }
+        }
+        Recipe.paginate( params )
+                
     },
     create(req, res){
         Recipe.ChefSelectOptions(function(options){

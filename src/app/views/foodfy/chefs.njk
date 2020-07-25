@@ -1,44 +1,41 @@
 {% extends "layout.njk" %}
 
-{% block head %}
-
-    <head>
-        <title>Foodfy - Recipes</title>
-        <link rel="stylesheet" href="/css/style.css">
-    </head>
-{% endblock %}
-
 {% block content %}
+ 
     <div class="contents index">
-        <form class="filter" action="/recipes" method="GET">
-               <img src="/assets/garfo.png" style="width: 36px" alt="">
+       <form class="filter" action="/chefs" method="GET">
+               <img src="/assets/chef-gorilla.png" style="width: 36px" alt="">
                 <input class="filter"
                     type="text"
                     name="filter"
-                    placeholder="Receita"
+                    placeholder="Chef"
                     value="{{filter}}"
                     >
                 <button class=""type="submit">Filtrar</button>
         </form>
-       <section class="box-cards">
         
-            
-        {% for recipe in recipes %}
+       <section class="box-cards">
+          
+        {% for chef in chefs %}
 
             <div class="box-card">
                 <div class="box-card-img">
-                    <img src="{{recipe.image}}" alt="Imagem do {{recipe.title}}">
+                    <img src="{{chef.avatar_url}}" alt="Imagem do {{item.name}}">
                 </div>
                 <div class="box-name">
-                    <p>{{recipe.title}}</p>
+               
+                    <p><img src="/assets/chef-1.png" alt="">  {{chef.name}}</p>
+                    
+              
+                    
                 </div>
-                <div class="box-info">
-                    <p><img src="/assets/chef-1.png" alt="">  {{recipe.author}}</p>
-                </div>
-                <input id="idAdmRecipe" type="hidden" value={{recipe.id}} >
+                
+                <input id="idChef" type="hidden" value={{chef.id}} >
             </div>
         {% endfor %}
 
+    
+     
     </section>
     <div class="pagination"
             data-page={{pagination.page}}
@@ -47,5 +44,4 @@
         ></div>
     </div>
      <script src="/scripts/script.js"></script>
-
-    {% endblock %}
+{% endblock%}

@@ -34,7 +34,7 @@ body{
     from{
         opacity: 0;
         width: 0;
-        background-color: wheat;
+        background-color: white;
         transform: translateY(30px);
 
 
@@ -128,6 +128,7 @@ body{
 }
 
 .box-card-img{
+    margin: 0;
     padding: 100px;
     display: grid;
     align-items: center;
@@ -194,12 +195,13 @@ ul {
 .header-admin{
     background-color: #111;
     display: grid;
-    grid-template-columns: 200px 100px 800px 500px;
+    grid-template-columns: 200px 100px 100px 700px 100px;
     align-items: center;
     width: 100%;
     padding: 32px;
     box-sizing: border-box;
     margin-bottom: 36x;
+    box-shadow: 0px 3px 5px -2px rgba(0, 0, 0, 0.4);
 }
 .header-admin h1 a{
     font-size: 32px;
@@ -208,7 +210,7 @@ ul {
 .header-admin a{
     text-decoration: none;
     font-size: 18px;
-    color: white;
+    color: wheat;
 }
 .header-admin a:hover{
     background-image: url(https://thumbs.gfycat.com/AbandonedAnguishedCatfish-max-1mb.gif);
@@ -227,7 +229,7 @@ ul {
     text-decoration: none;
     font-size: 16px;
     background-color: black;
-    color: white;
+    color: wheat;
     border-radius: 4px;
     padding: 8px 16px;
     cursor: pointer;
@@ -236,7 +238,7 @@ ul {
 }
 .header-admin h1 a{
     text-decoration: none;
-    color: white;
+    color: wheat;
 }
 .admin-info{
     display: grid;
@@ -285,7 +287,7 @@ span{
     margin-bottom: 10px;
     box-sizing: border-box;
     background-color: gray;
-    color: white;
+    color: wheat;
     border-radius: 6px;
     cursor: pointer;
 }
@@ -371,4 +373,25 @@ span{
 .pagination a:hover{
     border-bottom: black 1px solid;
     transform: 700ms;
+}
+
+/*filter*/
+.filter {
+    display: grid;
+    grid-template-columns: 36px 400px 120px;
+    align-items: center;
+    gap: 3px;
+}
+.filter img{
+    margin-left: auto;
+}
+
+.filter button{
+    margin: 0;
+    width: 120px;
+}
+.filter input{
+    border: 4px solid #eeee;
+    padding: 4px 8px;
+    box-sizing: border-box;
 }

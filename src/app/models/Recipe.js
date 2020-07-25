@@ -1,7 +1,6 @@
 const db = require ('../../config/db')
 const { date } = require('../../lib/utils')
 const Intl = require('intl')
-const { off } = require('../../config/db')
 module.exports = {
     all(callback){
         db.query(`

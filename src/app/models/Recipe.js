@@ -100,7 +100,7 @@ module.exports = {
         })
     },
     paginate(params){
-        const {filter, limit, offeset, callback} = params
+        const {filter, limit, offset, callback} = params
         
         let query = "",
             filterQuery = "",
@@ -125,9 +125,8 @@ module.exports = {
             LIMIT $1 OFFSET $2
             `
 
-         console.log(limit)
-         console.log(offeset)  
-        db.query(query, [limit, offeset], function(err, results){
+        
+        db.query(query, [limit, offset], function(err, results){
             if(err) throw `Database error - paginate ${err}`
 
             callback(results.rows)

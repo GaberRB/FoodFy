@@ -93,7 +93,7 @@ module.exports = {
     },
     paginate(params){
         const { filter, limit, offset, callback} = params
-        console.log(offset)
+       
         let query="",
             filterQuery="",
             totalQuery= `(SELECT COUNT(*) FROM chefs) AS total`

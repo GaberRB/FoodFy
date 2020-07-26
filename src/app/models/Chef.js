@@ -1,6 +1,7 @@
 const db = require ('../../config/db')
 const { date } = require('../../lib/utils')
 const Intl = require('intl')
+const { off } = require('../../config/db')
 module.exports = {
     all(callback){
         db.query(`
@@ -92,7 +93,7 @@ module.exports = {
     },
     paginate(params){
         const { filter, limit, offset, callback} = params
-
+        console.log(offset)
         let query="",
             filterQuery="",
             totalQuery= `(SELECT COUNT(*) FROM chefs) AS total`

@@ -101,7 +101,7 @@ module.exports = {
     },
     paginate(params){
         const {filter, limit, offeset, callback} = params
-
+        
         let query = "",
             filterQuery = "",
             totalQuery = `(SELECT COUNT(*) FROM recipes) AS total`
@@ -124,7 +124,9 @@ module.exports = {
             GROUP BY recipes.id, chefs.name
             LIMIT $1 OFFSET $2
             `
-            
+
+         console.log(limit)
+         console.log(offeset)  
         db.query(query, [limit, offeset], function(err, results){
             if(err) throw `Database error - paginate ${err}`
 

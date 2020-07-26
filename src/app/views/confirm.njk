@@ -1,16 +1,26 @@
     <script>
-        const formDelete = document.querySelector("#form-delete")
-        const haveRecipe = document.querySelector("#total-recipes").value
-        formDelete.addEventListener("submit", function(event){
-            if(haveRecipe){
-                const confirmation = alert('Não é possível deletar o chef, pois existem receitas cadastradas')
+  const currentPage = location.pathname
+const formDelete = document.querySelector("#form-delete")
+if(currentPage.includes('admin/recipes')){
+    formDelete.addEventListener("submit", function(event){
+        const confirmation = confirm('Deseja deletar?')
+        if(!confirmation){
+            event.preventDefault()
+        }
+    })
+}else if(currentPage.includes('admin/chefs')){
+    const haveRecipe = document.querySelector("#total-recipes").value
+    formDelete.addEventListener("submit", function(event){
+        if(haveRecipe > 0){
+            const confirmation = alert('Não é possível deletar o chef, pois existem receitas cadastradas')
+            event.preventDefault()
+        }else{
+            const confirmation = confirm('Deseja deletar?')
+            if(!confirmation){
                 event.preventDefault()
-            }else{
-                const confirmation = confirm('Deseja deletar?')
-                if(!confirmation){
-                    event.preventDefault()
-                }
-            } 
-            
-        })
+            }
+        }
+    })
+}    
+ 
     </script>

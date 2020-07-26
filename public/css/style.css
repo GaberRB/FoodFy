@@ -99,9 +99,11 @@ body{
 
 /* ==box cards ==*/
 
-.box-cards h3{
-    font-size: 24px;
-    font-weight: bold;
+.contents h3{
+    margin-top: 18px;
+    font-size: 18px;
+    text-align: center;
+    
 
 }
 .box-cards{
@@ -249,11 +251,6 @@ ul {
 
 }
 
-h3{
-    margin-top: 30px;
-    margin-left: 36px;
-    text-align: center;
-}
 
 /* ===form=== */
 

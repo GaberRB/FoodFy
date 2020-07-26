@@ -1,5 +1,6 @@
 //Search recipes on click/ redirect for repice page
 const currentPage = location.pathname
+console.log(currentPage)
 const cards = document.querySelectorAll('.box-card');
 for (let i = 0; i < cards.length; i++) {
 
@@ -11,6 +12,12 @@ for (let i = 0; i < cards.length; i++) {
             }else if (currentPage.includes('admin/chefs')){
                 const id = document.querySelectorAll('#idChef')
                 window.location.href = `/admin/chefs/${id[index].value}`
+            }else if (currentPage.includes('/recipes')){
+                const id = document.querySelectorAll("#idRecipe")
+                window.location.href = `/recipes/${id[index].value}`
+            }else if(currentPage.includes('/chefs')){
+                const id = document.querySelectorAll("#idChef")
+                window.location.href = `/chefs/${id[index].value}`
             }
                 
         });

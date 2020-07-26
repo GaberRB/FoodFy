@@ -10,7 +10,8 @@ routes.get("/", foodfy.index)
 routes.get("/about", foodfy.about)
 routes.get("/chefs", foodfy.chefs)
 routes.get("/recipes", foodfy.recipes)
-//routes.get("/recipe/:index", foodfy.recipe)
+routes.get("/recipes/:id", foodfy.showRecipe)
+routes.get("/chefs/:id", foodfy.showChef)
 
 
   //rotas do admin chefs

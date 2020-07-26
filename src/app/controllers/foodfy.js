@@ -37,6 +37,22 @@ module.exports = {
         Chef.paginate(params)
  
     },
+    showRecipe(req, res){
+        Recipe.find(req.params.id, function(recipe){
+            if(!recipe) return res.send("Recipe não encontrado")
+
+            return res.render('foodfy/recipe', { recipe })
+        })
+    },
+    showChef(req, res){
+        Chef.find(req.params.id, function(chef){
+            if(!chef) return res.send("Chef não encontrado")
+            Chef.recipeOnChef(req.params.id, function(recipes){
+                return res.render('foodfy/chef', { chef, recipes })
+            })
+            
+        })
+    },
     recipes(req, res){
 
         let {filter, page, limit } = req.query

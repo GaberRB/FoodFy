@@ -1,0 +1,57 @@
+{% extends "layout.njk" %}
+
+{% block head %}
+
+    <head>
+        <title>Foodfy - Chef</title>
+        <link rel="stylesheet" href="/css/style.css">
+    </head>
+{% endblock %}
+
+{% block content %}
+<section class="contents">
+        <div class="recipe-create">
+            <div class="admin-info">
+                <h2><img src="/assets/chef-1.png" alt=""> Chef : {{chef.name}}</h2>
+                <div>
+                    <a href="/admin/chefs/{{chef.id}}/edit">Editar chef</a>
+
+                </div>
+            </div>
+            <div class="chef-info">
+                <div class="chef-img" style="background: url({{chef.avatar_url}}) no-repeat center center /cover">
+                    
+                </div>
+                
+
+                <div>{{chef.name}}</div>
+                <div>{{chef.total_recipes}} Receitas</div>
+
+                <div>Receitas</div>
+                
+                
+            </div>
+            <div class="box-cards">
+                {% for recipe in recipes %}
+                    <div onclick="redirectRecipe('{{recipe.id}}')" class="box-card">
+                        <div class="box-card-img">
+                            <img src="{{recipe.image}}" alt="{{recipe.title}}">
+                        </div>
+                        <div class="box-name">
+                            <p>{{recipe.title}}</p>
+                        </div>
+                        <div class="box-info">
+                            <p>Por {{chef.name}}</p>
+                        </div>
+                    </div>
+                {% endfor %}
+                    
+       
+        </section>
+        <script>
+            function redirectRecipe(id){
+                window.location.href = `/recipes/${id}`
+            }
+        </script>
+
+{% endblock %}

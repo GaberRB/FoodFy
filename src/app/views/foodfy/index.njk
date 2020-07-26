@@ -23,74 +23,21 @@
 <section class="contents">
     <h3>As mais acessadas</h3>
     <div class="box-cards">
-        <div class="box-card">
-            <div class="box-card-img">
-                <img src="/assets/burger.png" alt="burger">
-            </div>
-            <div class="box-name">
-                <p>Triplo Burger Bancon</p>
-            </div>
-            <div class="box-info">
-                <p>Por Jorge Relato</p>
-            </div>
-        </div>
-        <div class="box-card">
-            <div class="box-card-img">
-                <img src="/assets/pizza.png" alt="burger">
-            </div>
-            <div class="box-name">
-                <p>Pizza 4 Estações</p>
-            </div>
-            <div class="box-info">
-                <p>Por Fabiana Melo</p>
-            </div>
-        </div>
-        <div class="box-card">
-            <div class="box-card-img">
-                <img src="/assets/espaguete.png" alt="burger">
-            </div>
-            <div class="box-name">
-                <p>Espaguete ao Alho</p>
-            </div>
-            <div class="box-info">
-                <p>Por Júlia Kinoto</p>
-            </div>
-        </div>
-        <div class="box-card">
-            <div class="box-card-img">
-                <img src="/assets/lasanha.png" alt="burger">
-            </div>
-            <div class="box-name">
-                <p>Lasanha mac n' Chesse</p>
-            </div>
-            <div class="box-info">
-                <p>Por Juliana Viera</p>
-            </div>
-        </div>
-        <div class="box-card">
-            <div class="box-card-img">
-                <img src="/assets/doce.png" alt="burger">
-            </div>
-            <div class="box-name">
-                <p>Docinhos Pão de Mel</p>
-            </div>
-            <div class="box-info">
-                <p>Por Ricardo Golvea</p>
-            </div>
-        </div>
-        <div class="box-card">
-            <div class="box-card-img">
-                <img src="/assets/asinhas.png" alt="burger">
-            </div>
-            <div class="box-name">
-                <p>Assinha de Frango ao Barbecue</p>
-            </div>
-            <div class="box-info">
-                <p>Por Vania Steroski</p>
-            </div>
-        </div>
-    </div>
+        {% for recipe in recipes %}
 
+            <div class="box-card">
+                <div class="box-card-img">
+                    <img src="{{recipe.image}}" alt="Imagem do {{recipe.title}}">
+                </div>
+                <div class="box-name">
+                    <p>{{recipe.title}}</p>
+                </div>
+                <div class="box-info">
+                    <p><img src="/assets/chef-1.png" alt="">  {{recipe.author}}</p>
+                </div>
+                <input id="idRecipe" type="hidden" value={{recipe.id}} >
+            </div>
+        {% endfor %}
 </section>
 
 {% endblock %}

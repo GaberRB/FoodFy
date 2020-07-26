@@ -5,6 +5,7 @@
 <section class="contents">
      <form id="form-delete"class="button-delete" method="POST" action="/admin/chefs?_method=DELETE">
         <input type="hidden" name="id" value={{chef.id}}>
+        <input type="hidden" id="total-recipes" value="{{chef.total_recipes}}">
         <button class="button-delete"type="submit">Deletar chef</button>
     </form>
     <form class="recipe-create" method="POST" action="/admin/chefs?_method=PUT">
@@ -18,6 +19,7 @@
         
        {% include 'admin/chefs/fields.njk' %}
         <input type="hidden" name="id" value="{{chef.id}}">
+        
     </form>
    
 </section> 

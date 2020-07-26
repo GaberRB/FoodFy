@@ -1,9 +1,16 @@
     <script>
         const formDelete = document.querySelector("#form-delete")
+        const haveRecipe = document.querySelector("#total-recipes").value
         formDelete.addEventListener("submit", function(event){
-            const confirmation = confirm('Deseja deletar?')
-            if(!confirmation){
+            if(haveRecipe){
+                const confirmation = alert('Não é possível deletar o chef, pois existem receitas cadastradas')
                 event.preventDefault()
-            }
+            }else{
+                const confirmation = confirm('Deseja deletar?')
+                if(!confirmation){
+                    event.preventDefault()
+                }
+            } 
+            
         })
     </script>

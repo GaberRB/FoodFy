@@ -119,12 +119,12 @@ module.exports = {
         query = `
             SELECT recipes.*, (chefs.name) AS author, ${totalQuery}
             FROM recipes
-            ${filterQuery}
             LEFT JOIN chefs ON (recipes.chef_id = chefs.id)
+            ${filterQuery}
             GROUP BY recipes.id, chefs.name
             LIMIT $1 OFFSET $2
             `
-
+            
         db.query(query, [limit, offeset], function(err, results){
             if(err) throw `Database error - paginate ${err}`
 

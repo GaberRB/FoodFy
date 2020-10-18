@@ -1,15 +1,30 @@
-<div class="item">
+        <div class="item">
             <div>Imagem da receita</div>
-                <div>
-                    <input 
-                        type="url" 
-                        name="image"
-                        value="{{recipe.image}}"
-                        placeholder="http:\\"
+                <div class="gallery">
+                    <div id="photos-upload">
+                        <input
+                            id="photos-input" 
+                            type="file" 
+                            name="photos"
+                            multiple
+                            accept="image/*"
+                            onchange="PhotosUpload.handleFileInput(event)"
+                                              
+                        >
+                        <div class="box-upload">
+                            <p>Selecione até 6 fotos</p>
+                            <i class="material-icons">archive</i>
+                        </div> 
+                    
+                    </div>
+                    <div id="photos-preview">
                        
-                    >
-            </div>
-        </div>
+                        <input type="hidden" name="removed_files">
+                    </div>
+                 </div>
+                </div>
+                
+        
         <div class="item">
             <div>Nome</div>
                 <div>
@@ -88,11 +103,7 @@
         <div class="item">
             <div>Informações adicionais</div>
                 <div>
-                    <input 
-                        type="text" 
-                        name="information"
-                        value="{{recipe.information}}"
-                     
-                    >
+                    <textarea name="information">{{recipe.information}}</textarea>
+                    
                 </div>
         </div>

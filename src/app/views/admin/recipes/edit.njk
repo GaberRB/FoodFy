@@ -7,7 +7,7 @@
         <input type="hidden" name="id" value={{recipe.id}}>
         <button class="button-delete"type="submit">Deletar</button>
     </form>
-    <form class="recipe-create" method="POST" action="/admin/recipes?_method=PUT">
+    <form class="recipe-create" method="POST" action="/admin/recipes?_method=PUT" enctype="multpart/form-data">
         <div class="button-edit">
             <h2>Editar receita</h2>
             <div><button type="submit">Salvar receita</button></div>

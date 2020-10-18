@@ -4,6 +4,8 @@ const foodfy = require('./app/controllers/foodfy')
 const recipes = require('./app/controllers/recipes')
 const chefs = require('./app/controllers/chefs')
 
+const multer = require('./app/middleware/multer')
+
 //rotas do foodfy
 
 routes.get("/", foodfy.index)
@@ -36,8 +38,8 @@ routes.get("/admin/recipes/create", recipes.create); // Mostrar formulário de n
 routes.get("/admin/recipes/:id", recipes.show); // Exibir detalhes de uma receita
 routes.get("/admin/recipes/:id/edit", recipes.edit); // Mostrar formulário de edição de receita
 
-routes.post("/admin/recipes", recipes.post); // Cadastrar nova receita
-routes.put("/admin/recipes", recipes.put); // Editar uma receita
+routes.post("/admin/recipes",multer.array("photos", 6), recipes.post); // Cadastrar nova receita
+routes.put("/admin/recipes",multer.array("photos", 6), recipes.put); // Editar uma receita
 routes.delete("/admin/recipes", recipes.delete); // Deletar uma receita
 
 module.exports = routes
